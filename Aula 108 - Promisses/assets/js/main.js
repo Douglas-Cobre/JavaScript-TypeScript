@@ -6,10 +6,10 @@ function rand(min,max){
     return Math.floor(Math.random()*(max-min)+min)
 }
 
-function esperaAi(msg,tempo){
+function esperaAi(msg){
     return new Promise((resolve,reject)=>{//São duas funções
-        if(typeof msg !== 'string') reject('Bad value')
-        setTimeout(()=>{
+        if(typeof msg !== 'string') reject('Bad value')//Esse sera o 'ERROR', lá embaixo
+        setTimeout(()=>{//setTimeout não é obrigatório
             resolve(msg)
         },tempo)
     })
@@ -17,7 +17,7 @@ function esperaAi(msg,tempo){
 
 //THEN()=>É a resposta caso seja um resultado positivo(resolve)
 //CATCH()=>É a resposta caso seja um resultado negativo(reject)
-esperaAi('Frase 1',rand(1,3))//.then(arrow function)
+esperaAi('Frase 01',rand(1,3))//.then(arrow function)
 .then(resposta=>{
     console.log(resposta)
 })
